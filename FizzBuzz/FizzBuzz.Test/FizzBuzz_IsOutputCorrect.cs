@@ -6,20 +6,12 @@ namespace FizzBuzz.Test;
 [TestFixture]
 public class FizzBuzz_IsOutputCorrect
 {
-    private CountingGame _fizzBuzz_Game;
+    private FizzBuzz _fizzBuzz;
 
     [SetUp]
     public void Setup()
     {
-        List<CountingRule> rules = new()
-        {
-            new CountingRule(15, "FizzBuzz"),
-            new CountingRule(5, "Buzz"),
-            new CountingRule(3, "Fizz")
-        };
-
-        _fizzBuzz_Game = new CountingGame(rules);
-
+        _fizzBuzz = new FizzBuzz();
     }
 
     [TestCase(3)]
@@ -27,7 +19,7 @@ public class FizzBuzz_IsOutputCorrect
     [TestCase(9)]
     public void Test_ReturnFizz(int value)
     {
-        var result = _fizzBuzz_Game.Output(value);
+        var result = _fizzBuzz.Output(value);
 
         Assert.That(result, Is.EqualTo("Fizz"));
     }
@@ -37,7 +29,7 @@ public class FizzBuzz_IsOutputCorrect
     [TestCase(20)]
     public void Test_ReturnBuzz(int value)
     {
-        var result = _fizzBuzz_Game.Output(value);
+        var result = _fizzBuzz.Output(value);
 
         Assert.That(result, Is.EqualTo("Buzz"));
     }
@@ -47,7 +39,7 @@ public class FizzBuzz_IsOutputCorrect
     [TestCase(45)]
     public void Test_ReturnFizzBuzz(int value)
     {
-        var result = _fizzBuzz_Game.Output(value);
+        var result = _fizzBuzz.Output(value);
 
         Assert.That(result, Is.EqualTo("FizzBuzz"));
     }
@@ -57,7 +49,7 @@ public class FizzBuzz_IsOutputCorrect
     [TestCase(4, "4")]
     public void Test_ReturnNumber(int value, string expectedResult)
     {
-        var result = _fizzBuzz_Game.Output(value);
+        var result = _fizzBuzz.Output(value);
 
         Assert.That(result, Is.EqualTo(expectedResult));
     }
