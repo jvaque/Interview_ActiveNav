@@ -2,25 +2,25 @@
 
 namespace FizzBuzz;
 
-static class FizzBuzz
+public static class FizzBuzz
 {
-    public static void Output(int value)
+    public static string Output(int value)
     {
         if (value % 15 == 0)
         {
-            Console.WriteLine("FizzBuzz");
+            return "FizzBuzz";
         }
         else if (value % 5 == 0)
         {
-            Console.WriteLine("Buzz");
+            return "Buzz";
         }
         else if (value % 3 == 0)
         {
-            Console.WriteLine("Fizz");
+            return "Fizz";
         }
         else
         {
-            Console.WriteLine(value);
+            return value.ToString();
         }
     }
 }
