@@ -1,4 +1,4 @@
-namespace nunit
+namespace FizzBuzz.Test
 {
     public class Tests
     {
