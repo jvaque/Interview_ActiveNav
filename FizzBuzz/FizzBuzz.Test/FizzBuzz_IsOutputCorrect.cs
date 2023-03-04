@@ -1,5 +1,4 @@
 using NUnit.Framework;
-using System.Collections.Generic;
 
 namespace FizzBuzz.Test;
 
@@ -14,40 +13,19 @@ public class FizzBuzz_IsOutputCorrect
         _fizzBuzz = new FizzBuzz();
     }
 
-    [TestCase(3)]
-    [TestCase(6)]
-    [TestCase(9)]
-    public void Test_ReturnFizz(int value)
-    {
-        var result = _fizzBuzz.Output(value);
-
-        Assert.That(result, Is.EqualTo("Fizz"));
-    }
-
-    [TestCase(5)]
-    [TestCase(10)]
-    [TestCase(20)]
-    public void Test_ReturnBuzz(int value)
-    {
-        var result = _fizzBuzz.Output(value);
-
-        Assert.That(result, Is.EqualTo("Buzz"));
-    }
-
-    [TestCase(15)]
-    [TestCase(30)]
-    [TestCase(45)]
-    public void Test_ReturnFizzBuzz(int value)
-    {
-        var result = _fizzBuzz.Output(value);
-
-        Assert.That(result, Is.EqualTo("FizzBuzz"));
-    }
-
-    [TestCase(1, "1")]
-    [TestCase(2, "2")]
-    [TestCase(4, "4")]
-    public void Test_ReturnNumber(int value, string expectedResult)
+    [TestCase( 3, "Fizz")]
+    [TestCase( 6, "Fizz")]
+    [TestCase( 9, "Fizz")]
+    [TestCase( 5, "Buzz")]
+    [TestCase(10, "Buzz")]
+    [TestCase(20, "Buzz")]
+    [TestCase(15, "FizzBuzz")]
+    [TestCase(30, "FizzBuzz")]
+    [TestCase(45, "FizzBuzz")]
+    [TestCase( 1, "1")]
+    [TestCase( 2, "2")]
+    [TestCase( 4, "4")]
+    public void Test_Output(int value, string expectedResult)
     {
         var result = _fizzBuzz.Output(value);
 

@@ -13,5 +13,15 @@ class Program
         {
             Console.WriteLine(fizzBuzz.Output(i));
         }
+
+        Console.WriteLine("---------------------------------");
+
+        BeepBop beepBop = new BeepBop();
+        for (int i = 1; i <= 100; i++)
+        {
+            Console.WriteLine(beepBop.Output(i));
+        }
+
+        Console.WriteLine("---------------------------------");
     }
 }
