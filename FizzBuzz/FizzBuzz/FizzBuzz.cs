@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace FizzBuzz;
 
@@ -21,5 +22,13 @@ public class FizzBuzz
     public string Output(int value)
     {
         return _game.Output(value);
+    }
+
+    public void Play()
+    {
+        for (int i = 1; i <= 100; i++)
+        {
+            Console.WriteLine(this.Output(i));
+        }
     }
 }

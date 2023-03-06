@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 
 namespace FizzBuzz;
 
@@ -9,18 +8,13 @@ class Program
     {
         FizzBuzz fizzBuzz = new FizzBuzz();
 
-        for (int i = 1; i <= 100; i++)
-        {
-            Console.WriteLine(fizzBuzz.Output(i));
-        }
+        fizzBuzz.Play();
 
         Console.WriteLine("---------------------------------");
 
         BeepBop beepBop = new BeepBop();
-        for (int i = 1; i <= 100; i++)
-        {
-            Console.WriteLine(beepBop.Output(i));
-        }
+
+        beepBop.Play();
 
         Console.WriteLine("---------------------------------");
     }
